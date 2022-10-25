@@ -87,4 +87,10 @@ def main() -> None:
     function headers, duplicate the functionality of the
     abandoned replicator at https://mru-replicator.fly.dev.
     """
-
+    switch_a = input("Is switch A enabled?(y/n): ")
+    switch_b = input("Is switch B enabled?(y/n): ")
+    slider_value = input("What's the value of the slider?(0-100): ")
+    
+    get_beverage_type()
+    get_temperature_desc()
+    get_switch_value()
