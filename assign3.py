@@ -3,19 +3,8 @@
 
 USERNAME = "dgonz348"  # define your MRU username here
 
-slider_value = int(input('enter number'))
-if slider_value == 0:
-       print('frozen')
-elif slider_value <= 15:
-    print('cold')    
-elif slider_value <=41:
-    print('warm') 
-elif slider_value <= 99:
-    print('hot')
-elif slider_value == 100:
-    print('boiling')
 
-exit()
+
 
 def get_beverage_type(a_enabled: bool, b_enabled: bool) -> str:
     """
@@ -58,16 +47,17 @@ def get_temperature_desc(slider_value: int) -> str:
     Returns the temperature description defined by the slider value.
     Assume the value is always an integer between 0 and 100 (inclusive).
     """
-    if slider_value == 100:
-        print('boiling')
-    elif slider_value <= 99:
-        print('hot')
+    slider_value = int(input('enter number'))
+    if slider_value == 0:
+        print('frozen')
+    elif slider_value <= 15:
+        print('cold')    
     elif slider_value <=41:
         print('warm') 
-    elif slider_value <= 15:
-        print('cold')
-    elif slider_value == 0:
-        print('frozen')
+    elif slider_value <= 99:
+        print('hot')
+    elif slider_value == 100:
+        print('boiling')
 
 
 def get_switch_value(switch_name: str) -> bool:
