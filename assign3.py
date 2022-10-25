@@ -1,8 +1,4 @@
-
-
-
 USERNAME = "dgonz348"  # define your MRU username here
-
 
 
 
@@ -30,17 +26,14 @@ def get_beverage_type(a_enabled: bool, b_enabled: bool) -> str:
         beverage = 'water'
     elif b_enabled == True:
         beverage = 'milk, 2%'
-
     elif a_enabled  == False and b_enabled == False:
         beverage = 'coffee, americano'
 
+    # it compares the values for the switches A and B and assigns the values depending  what the users chooses
+    # this is basic code and needs to be improved
     print(beverage)
 
 
-   
-    #string_get_bev = 
-    
-    #return string_get_bev 
 
 def get_temperature_desc(slider_value: int) -> str:
     """
@@ -58,7 +51,8 @@ def get_temperature_desc(slider_value: int) -> str:
         print('hot')
     elif slider_value == 100:
         print('boiling')
-
+    # It compares the values of what the user chooses and print a state of the beverage depending on what the user chose
+    # this is basic code and needs to be improved
 
 def get_switch_value(switch_name: str) -> bool:
     """
