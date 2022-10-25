@@ -86,4 +86,3 @@ elif is_a_enabled == 'n':
 
 print(a_enabled)
 
-get_beverage_type(True, False)
