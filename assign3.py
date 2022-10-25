@@ -1,14 +1,47 @@
+
+
+
 USERNAME = "dgonz348"  # define your MRU username here
+
+
 
 
 def get_beverage_type(a_enabled: bool, b_enabled: bool) -> str:
     """
     Returns the beverage type defined by the switches.
     """
-    if a_enabled == True:
-        
-        
 
+    if a_enabled == 'y':
+        a_enabled = True
+    else: 
+        a_enabled = False
+    
+    if b_enabled == 'y':
+        b_enabled = True
+    else:
+        b_enabled = False
+
+    a_enabled = True
+    b_enabled = True
+
+
+
+    if a_enabled == True:
+        beverage = 'water'
+
+    elif b_enabled == True:
+        beverage = 'milk, 2%'
+
+    elif a_enabled  == False and b_enabled == False:
+        beverage = 'coffee, americano'
+
+    print(beverage)
+
+exit()
+   
+    #string_get_bev = 
+    
+    #return string_get_bev 
 
 def get_temperature_desc(slider_value: int) -> str:
     """
@@ -31,3 +64,16 @@ def main() -> None:
     function headers, duplicate the functionality of the
     abandoned replicator at https://mru-replicator.fly.dev.
     """
+
+
+is_a_enabled = input('Is the switch A enabled?(y for yes and n for no) ')
+a_enabled = True
+
+if is_a_enabled == 'y':
+    a_enabled = True
+elif is_a_enabled == 'n':
+    a_enabled = False 
+
+print(a_enabled)
+
+get_beverage_type(True, False)
