@@ -15,15 +15,13 @@ def get_beverage_type(a_enabled: bool, b_enabled: bool) -> str:
         beverage = 'water'
     elif (is_a_enabled == False) and (is_b_enabled == True):
         beverage = 'milk, 2%'
-    elif (is_a_enabled == False) and (is_b_enabled == False):
+    else:
         beverage = 'coffee, americano'
     # it compares the values of is_a_enabled and is_b_enabled and depending on 
     # the values it sets the variable to a string from above
     
-    message = beverage # it sets the message variable to what the beverage was set for
-    return message
+    return beverage
     
-
 
 
 def get_temperature_desc(slider_value: int) -> str:
@@ -41,12 +39,13 @@ def get_temperature_desc(slider_value: int) -> str:
         state = 'warm' 
     elif is_slider_value <= 99:
         state = 'hot'
-    elif is_slider_value == 100:
+    else:
         state = 'boiling'
     # It compares the value the user chose and then it assigns a string to state variable 
-    
-    message = state # assigns variable to state
-    return message
+
+    return state
+
+
 
 def get_switch_value(switch_name: str) -> bool:
     """
@@ -57,11 +56,13 @@ def get_switch_value(switch_name: str) -> bool:
 
     if is_switch_name == 'y':
         switch_name = True
-    elif is_switch_name == 'n':
+    else:
         switch_name = False
     # It compares the value and depending on the string it sets switch_name to either True or False
 
     return switch_name
+
+
 
 def main() -> None:
     """
@@ -71,11 +72,11 @@ def main() -> None:
     abandoned replicator at https://mru-replicator.fly.dev.
     """
     
-    switch_a = get_switch_value(input("Is switch A enabled?(y/n): "))
+    switch_a = get_switch_value(input("Is switch A enabled?(y/n): ").lower())
     # it sets the argument to what the user input and then calls in the function 
     # to then set the variable to what the function returned
     
-    switch_b = get_switch_value(input("Is switch B enabled?(y/n): "))
+    switch_b = get_switch_value(input("Is switch B enabled?(y/n): ").lower())
     # it sets the argument to what the user input and then calls in the function 
     # to then set the variable to what the function returned
 
@@ -84,7 +85,7 @@ def main() -> None:
     
 
     print(f'result: {get_beverage_type(switch_a, switch_b)}, {get_temperature_desc(slider_value)}')
-    # calls in the functions "get_beverage_type" and "get_temperature_desc" using the values from the previous variables
-    # as arguments and then it prints the result  
+    # calls in the functions "get_beverage_type" and "get_temperature_desc" using 
+    # the values from the previous variables as arguments and then it prints the result  
 
-main()
+main() # calls in main to execute program
