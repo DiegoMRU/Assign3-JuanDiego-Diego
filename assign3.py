@@ -9,9 +9,7 @@ def get_beverage_type(a_enabled: bool, b_enabled: bool) -> str:
     is_a_enabled = a_enabled # set the variable to the parameter's value
     is_b_enabled = b_enabled # set the variable to the parameter's value
 
-    if (is_a_enabled == True) and (is_b_enabled == True):
-        beverage = 'water'
-    elif (is_a_enabled == True) and (is_b_enabled == False):
+    if (is_a_enabled == True):
         beverage = 'water'
     elif (is_a_enabled == False) and (is_b_enabled == True):
         beverage = 'milk, 2%'
@@ -33,11 +31,11 @@ def get_temperature_desc(slider_value: int) -> str:
 
     if is_slider_value == 0:
         state = 'frozen'
-    elif is_slider_value <= 15:
+    elif is_slider_value < 16:
         state = 'cold'    
-    elif is_slider_value <=41:
+    elif is_slider_value < 42:
         state = 'warm' 
-    elif is_slider_value <= 99:
+    elif is_slider_value < 100:
         state = 'hot'
     else:
         state = 'boiling'
