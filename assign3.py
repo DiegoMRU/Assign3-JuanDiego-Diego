@@ -11,13 +11,16 @@ def get_beverage_type(a_enabled: bool, b_enabled: bool) -> str:
 
     if (is_a_enabled == True):
         beverage = 'water'
+    # Since water is obtained by the swicth A being enabled, either B is enabled or not, 
+    # there is no need to care for B being True or False
+
     elif (is_a_enabled == False) and (is_b_enabled == True):
         beverage = 'milk, 2%'
     else:
         beverage = 'coffee, americano'
     # it compares the values of is_a_enabled and is_b_enabled and depending on 
     # the values it sets the variable to a string from above
-    
+
     return beverage
     
 
@@ -27,9 +30,8 @@ def get_temperature_desc(slider_value: int) -> str:
     Returns the temperature description defined by the slider value.
     Assume the value is always an integer between 0 and 100 (inclusive).
     """
-    is_slider_value = slider_value # sets the variable to the parameter's value
 
-    if is_slider_value == 0:
+    if slider_value == 0:
         state = """ frozen
          _.-.  
        ,'/ //\ 
@@ -44,7 +46,7 @@ def get_temperature_desc(slider_value: int) -> str:
  / /           
 (_/  
                 """       
-    elif is_slider_value < 16:
+    elif slider_value < 16:
         state = """cold
         
     .   *   ..  . *  * 
@@ -61,7 +63,7 @@ def get_temperature_desc(slider_value: int) -> str:
     |\_|__|__|_/|      
      \_________/  
                 """    
-    elif is_slider_value < 42:
+    elif slider_value < 42:
         state = """warm
      ____     
     |    |    
@@ -83,7 +85,7 @@ def get_temperature_desc(slider_value: int) -> str:
 |------------|
 |____________|
                 """ 
-    elif is_slider_value < 100:
+    elif slider_value < 100:
         state = """hot
     (  )  (   )  )      
      )(    ) (  (       
@@ -125,7 +127,8 @@ def get_switch_value(switch_name: str) -> bool:
       
 
     is_switch_name = input(f"Is switch {switch_name} enabled?(y/n): ").lower() == 'y'
-    #it prompts the user for the state of the swicth and it assigns that to the variable 
+    #it prompts the user for the state of the swicth and it  compare that input to make it  a boolean 
+    # and it assigns that to the variable
     
     if is_switch_name == True:
         return True
