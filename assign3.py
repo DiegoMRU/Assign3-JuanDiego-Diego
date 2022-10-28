@@ -10,7 +10,7 @@ def get_beverage_type(a_enabled: bool, b_enabled: bool) -> str:
     is_b_enabled = b_enabled # set the variable to the parameter's value
 
     if (is_a_enabled == True):
-        beverage = 'water'
+        beverage = 'water, '
     # Since water is obtained by the swicth A being enabled, either B is enabled or not, 
     # there is no need to care for B being True or False
 
@@ -32,7 +32,7 @@ def get_temperature_desc(slider_value: int) -> str:
     """
 
     if slider_value == 0:
-        state = """ frozen
+        state = """frozen
          _.-.  
        ,'/ //\ 
       /// // /)
@@ -152,10 +152,10 @@ def main() -> None:
     # Calls in "get_switch_value" for the switch B and then it assigns what the function returned to switch_b
     
     slider_value = int(input("What's the value of the slider?(0-100): "))
-    # set the variable to the user's input, the value is a integer
+    # set the variable to the user's input, the input should be an integer
     
 
-    print(f'result: {get_beverage_type(switch_a, switch_b)}, {get_temperature_desc(slider_value)}')
+    print(f'Result: {get_beverage_type(switch_a, switch_b)}, {get_temperature_desc(slider_value)}')
     # calls in the functions "get_beverage_type" and "get_temperature_desc" using 
     # the values from the previous variables as arguments and then it prints the result  
 
