@@ -30,15 +30,87 @@ def get_temperature_desc(slider_value: int) -> str:
     is_slider_value = slider_value # sets the variable to the parameter's value
 
     if is_slider_value == 0:
-        state = 'frozen'
+        state = """ frozen
+         _.-.  
+       ,'/ //\ 
+      /// // /)
+     /// // //|
+    /// // /// 
+   /// // ///  
+  (`: // ///   
+   `;`: ///    
+   / /:`:/     
+  / /  `'      
+ / /           
+(_/  
+                """       
     elif is_slider_value < 16:
-        state = 'cold'    
+        state = """cold
+        
+    .   *   ..  . *  * 
+*  * @()Ooc()*   o  .  
+    (Q@*0CG*O()  ___   
+    |\_________/|/ _ \ 
+    |  |  |  |  | / | |
+    |  |  |  |  | | | |
+    |  |  |  |  | | | |
+    |  |  |  |  | | | |
+    |  |  |  |  | | | |
+    |  |  |  |  | \_| |
+    |  |  |  |  |\___/ 
+    |\_|__|__|_/|      
+     \_________/  
+                """    
     elif is_slider_value < 42:
-        state = 'warm' 
+        state = """warm
+     ____     
+    |    |    
+    |    |    
+    |____|    
+    |    |    
+    (    )    
+    )    (    
+  .'      `.  
+ /          \ 
+|------------|
+|            |
+|   /----\   |
+|  |      |  |
+|  |      |  |
+|  |      |  |
+|   \----/   |
+|            |
+|------------|
+|____________|
+                """ 
     elif is_slider_value < 100:
-        state = 'hot'
+        state = """hot
+    (  )  (   )  )      
+     )(    ) (  (       
+    (  )  (   )  )       
+     _____________       
+    <_____________> ___  
+    |             |/ _ \ 
+    |               | | |
+    |               |_| |
+ ___|             |\___/ 
+/    \___________/    \  
+\_____________________/  
+                """
     else:
-        state = 'boiling'
+        state = """boiling
+                
+                       ( )    (  )
+                 (  )              
+               _.----""()""()---._ 
+ .------.___  (     ()     ()     )
+(        ___|-|`""----..(_)__..-""|
+ \------/     |                   |
+              |                   |
+              |                   |
+              |                   |
+               `""----..____..---"" 
+                """
     # It compares the value the user chose and then it assigns a string to state variable 
 
     return state
@@ -50,15 +122,16 @@ def get_switch_value(switch_name: str) -> bool:
     Prompts the user for the state of the specified switch.
     Returns true if the specified switch is enabled and false otherwise.
     """
-    is_switch_name = switch_name # sets the variable to the parameter's value 
+      
 
-    if is_switch_name == 'y':
-        switch_name = True
+    is_switch_name = input(f"Is switch {switch_name} enabled?(y/n): ").lower() == 'y'
+    #it prompts the user for the state of the swicth and it assigns that to the variable 
+    
+    if is_switch_name == True:
+        return True
     else:
-        switch_name = False
-    # It compares the value and depending on the string it sets switch_name to either True or False
-
-    return switch_name
+        return False
+    # It compares the value and depending on the string it returns either True or False
 
 
 
@@ -69,17 +142,14 @@ def main() -> None:
     function headers, duplicate the functionality of the
     abandoned replicator at https://mru-replicator.fly.dev.
     """
+    switch_a = get_switch_value("A")
+    # Calls in "get_switch_value" for the switch A and then it assigns what the function returned to switch_a
     
-    switch_a = get_switch_value(input("Is switch A enabled?(y/n): ").lower())
-    # it sets the argument to what the user input and then calls in the function 
-    # to then set the variable to what the function returned
+    switch_b = get_switch_value("B")
+    # Calls in "get_switch_value" for the switch B and then it assigns what the function returned to switch_b
     
-    switch_b = get_switch_value(input("Is switch B enabled?(y/n): ").lower())
-    # it sets the argument to what the user input and then calls in the function 
-    # to then set the variable to what the function returned
-
     slider_value = int(input("What's the value of the slider?(0-100): "))
-    #set the variable to what the user input, the value is a integer
+    # set the variable to the user's input, the value is a integer
     
 
     print(f'result: {get_beverage_type(switch_a, switch_b)}, {get_temperature_desc(slider_value)}')
@@ -87,3 +157,8 @@ def main() -> None:
     # the values from the previous variables as arguments and then it prints the result  
 
 main() # calls in main to execute program
+
+# How to do multiline strings: 
+# https://www.techbeamers.com/python-multiline-string/#:~:text=Use%20triple%20quotes%20to%20create%20a%20multiline%20string&text=You%20will%20need%20to%20enclose,and%20second%20in%20the%20end.&text=Anything%20inside%20the%20enclosing%20Triple,part%20of%20one%20multiline%20string.
+
+
